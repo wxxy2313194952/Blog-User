@@ -120,7 +120,7 @@ export default {
   width: 850px;
   /* height: 700px; */
   margin: 20px;
-  background-color: #fff;
+  /* background-color: #fff; */
   flex-shrink: 0;
 }
 /* 文章列表 */

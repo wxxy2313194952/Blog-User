@@ -4,7 +4,7 @@
     <!-- 左侧 -->
     <ul class="top-left">
       <!-- logo -->
-      <li class="logo"><router-link to="/home"><img src="./images/mylogo.png" /></router-link></li>
+      <li class="logo"><router-link to="/home"><img src="@/assets/images/mylogo.png" /></router-link></li>
       <li>
         <router-link to="/home"><i class="iconfont icon-shouye"></i> 首页</router-link>
       </li>
@@ -23,13 +23,10 @@
     <div class="top-right">
       <!-- 头像 或 登录 -->
       <div class="pice">
-        <router-link class="piceA" to="/login">
-          <img src="@/assets/images/mypice.jpg" />
-        </router-link>
+        <img src="@/assets/images/mypice.jpg" />
       </div>
-      <div><a href="#">后台管理</a></div>
-      <div class="right-end"><router-link to="/regist">注册账号</router-link></div>
-      <div class="right-end"><router-link to="/edit">文章编辑</router-link></div>
+      <div><a href="javascript:;">后台管理</a></div>
+      <div class="right-end"><router-link to="/analytics">访客统计</router-link></div>
     </div>
   </div>
 </template>

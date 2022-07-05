@@ -1,9 +1,7 @@
 // 引入路由组件
-import Login from '@/pages/Login'
 import Search from '@/pages/Search'
 import Home from '@/pages/Home'
-import Regist from '@/pages/Regist'
-import Edit from '@/pages/Edit'
+import Analytics from '@/pages/Analytics'
 import Article from '@/pages/Article'
 import Archives from '@/pages/Archives'
 import Update from '@/pages/Update'
@@ -45,14 +43,6 @@ export default[
     },
   },
   {
-    path: '/login',
-    component: Login,
-    name: 'login',
-    meta: {
-      isShow: false
-    },
-  },
-  {
     path: '/search/:keywords?',
     component: Search,
     name: 'search',
@@ -61,17 +51,9 @@ export default[
     },
   },
   {
-    path: '/regist',
-    component: Regist,
-    name: 'regist',
-    meta: {
-      isShow: false
-    },
-  },
-  {
-    path: '/edit',
-    component: Edit,
-    name: 'edit',
+    path: '/analytics',
+    component: Analytics,
+    name: 'analytics',
     meta: {
       isShow: false
     },

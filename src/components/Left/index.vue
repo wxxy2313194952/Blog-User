@@ -3,6 +3,7 @@
   <div class="in-left">
     <!-- 名片 -->
     <div class="mycard">
+      <div class="back-img"><img src="@/assets/images/back_img.jpg"></div>
       <div class="id-img"><img src="@/assets/images/mypice.jpg" /></div>
       <div class="id-name"><span>WXXY</span></div>
       <div class="id-title">
@@ -62,19 +63,32 @@ export default {
   width: 100%;
   height: 300px;
   background-color: #fff;
-  border: 1px solid #fff;
+  /* border: 1px solid #fff; */
   border-radius: 5px;
   margin-bottom: 20px;
+  position: relative;
 }
 .in-left .mycard:hover {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 }
+/* 头像下的背景图 */
+.mycard .back-img{
+  height: 110px;
+}
+.mycard .back-img img {
+  width: 100%;
+  height: 100%;
+}
 /* 头像 */
 .mycard .id-img {
-  height: 80px;
-  width: 80px;
+  height: 90px;
+  width: 90px;
   border-radius: 50%;
   margin: 10px auto;
+  position: absolute;
+  top: 50px;
+  left: 65px;
+  border: 5px solid hsla(0,0%,100%,.5);
 }
 .mycard .id-img img {
   width: 100%;
@@ -83,6 +97,7 @@ export default {
 }
 /* 昵称 */
 .mycard .id-name {
+  margin-top: 60px;
   height: 30px;
   text-align: center;
   margin-bottom: 10px;
@@ -96,8 +111,9 @@ export default {
   display: flex;
   height: 50px;
   width: 170px;
-  /* border: 1px #bfc solid; */
-  margin: 0px auto;
+  border-top: 1px #e9e9e9 solid;
+  margin-top: 10px;
+  padding: 20px 30px;
 }
 .mycard .id-title-item {
   height: 50px;

@@ -9,8 +9,8 @@
       <div class="top-article">
         <div class="article-img"></div>
         <div class="article-bott">
-          <h3 class="bott-title"><a href="">hand--一款typecho的主题</a></h3>
-          <div class="bott-content"><span><a href="">在复杂中，保持简洁。 一款精心打磨后的typecho主题。</a></span></div>
+          <h3 class="bott-title"><a href="javascript:;">hand--一款typecho的主题</a></h3>
+          <div class="bott-content"><span><a href="javascript:;">在复杂中，保持简洁。 一款精心打磨后的typecho主题。</a></span></div>
         </div>
       </div>
       <!-- 暂定 文章列表 -->
@@ -163,9 +163,9 @@ export default {
   margin-top: 25px;
   color: rgb(66, 139, 202);
 }
-.article-right .article-tag {
+/* .article-right .article-tag {
 
-}
+} */
 .article-right .article-content {
   font-size: 14px;
   margin-top: 14px;

@@ -22,10 +22,10 @@
         <!-- 展示区 -->
         <ul class="like-cont">
           <li class="like-cont-item">
-            <div class="cont-item-img"><a href=""><img src="./images/pic.png" /></a></div>
+            <div class="cont-item-img"><a href="javascript:;"><img src="./images/pic.png" /></a></div>
             <div class="cont-item-p">
               <div class="pa">
-                <a href=""><span>测试标题</span></a>
+                <a href="javascript:;"><span>测试标题</span></a>
               </div>
               <div class="pb">
                 <i class="iconfont icon-liulan1"></i><span>&nbsp;1234</span>
@@ -33,10 +33,10 @@
             </div>
           </li>
           <li class="like-cont-item">
-            <div class="cont-item-img"><a href=""><img src="./images/pic.png" /></a></div>
+            <div class="cont-item-img"><a href="javascript:;"><img src="./images/pic.png" /></a></div>
             <div class="cont-item-p">
               <div class="pa">
-                <a href=""><span>测试标题</span></a>
+                <a href="javascript:;"><span>测试标题</span></a>
               </div>
               <div class="pb">
                 <i class="iconfont icon-liulan1"></i><span>&nbsp;1234</span>
@@ -44,10 +44,10 @@
             </div>
           </li>
           <li class="like-cont-item">
-            <div class="cont-item-img"><a href=""><img src="./images/pic.png" /></a></div>
+            <div class="cont-item-img"><a href="javascript:;"><img src="./images/pic.png" /></a></div>
             <div class="cont-item-p">
               <div class="pa">
-                <a href=""><span>测试标题</span></a>
+                <a href="javascript:;"><span>测试标题</span></a>
               </div>
               <div class="pb">
                 <i class="iconfont icon-liulan1"></i><span>&nbsp;1234</span>
