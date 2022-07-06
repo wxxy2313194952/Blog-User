@@ -55,7 +55,7 @@ export default[
     component: Analytics,
     name: 'analytics',
     meta: {
-      isShow: false
+      isShow: true
     },
   },
   {

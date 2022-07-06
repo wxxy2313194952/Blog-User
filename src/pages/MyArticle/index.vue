@@ -34,8 +34,8 @@
               >&nbsp;&nbsp;&nbsp;&nbsp;
               <span
                 ><i class="iconfont icon-pinglun1"></i>&nbsp;{{
-                  article.message_count
-                }}条评论</span
+                  article.message_count == 0 ? "暂无" : article.message_count + "条"
+                }}评论</span
               >
             </div>
           </div>
