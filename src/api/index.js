@@ -83,4 +83,8 @@ export const reqGetLeaveNum = () => requests({
   method: 'get'
 })
 
-// 
+// 获取更新日志列表接口
+export const reqGetVerList = () => requests({
+  url: '/api/verlist',
+  method: 'get'
+})

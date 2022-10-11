@@ -1,54 +1,20 @@
 <template>
   <div class="outer">
     <div class="left">
-      <div class="article">
+      <div class="article" v-for="list in VerList" :key="list.id">
         <div class="version">
           <div><span>Version</span></div>
-          <div style="margin-top:10px;"><span>0.0.1</span></div>
+          <div style="margin-top:10px;"><span>{{list.version}}</span></div>
         </div>
         <div class="version-con">
           <div class="version-title">
-            <span>测试标题测试标题测试标题测试标题测试标题测</span>
+            <span>{{list.title}}</span>
           </div>
           <div class="version-content">
-            <p>测试内容测试内容测试内容测试内容测试内容测试内容</p>
+            <p>{{list.content}}</p>
           </div>
           <div class="version-time">
-            <span>2022.04.29</span>
-          </div>
-        </div>
-      </div>
-      <div class="article">
-        <div class="version">
-          <div><span>Version</span></div>
-          <div style="margin-top:10px;"><span>0.0.1</span></div>
-        </div>
-        <div class="version-con">
-          <div class="version-title">
-            <span>测试标题测试标题测试标题测试标题测试标题测</span>
-          </div>
-          <div class="version-content">
-            <p>测试内容测试内容测试内容测试内容测试内容测试内容</p>
-          </div>
-          <div class="version-time">
-            <span>2022.04.29</span>
-          </div>
-        </div>
-      </div>
-      <div class="article">
-        <div class="version">
-          <div><span>Version</span></div>
-          <div style="margin-top:10px;"><span>0.0.1</span></div>
-        </div>
-        <div class="version-con">
-          <div class="version-title">
-            <span>测试标题测试标题测试标题测试标题测试标题测</span>
-          </div>
-          <div class="version-content">
-            <p>测试内容测试内容测试内容测试内容测试内容测试内容</p>
-          </div>
-          <div class="version-time">
-            <span>2022.04.29</span>
+            <span>{{list.time}}</span>
           </div>
         </div>
       </div>
@@ -56,12 +22,12 @@
     <div class="right">
       <el-timeline>
         <el-timeline-item
-          v-for="(activity, index) in activities"
+          v-for="(activity, index) in VerList" 
           :key="index"
           :icon="icon"
           :color="color"
           :size="size"
-          :timestamp="activity.timestamp"
+          :timestamp="activity.time"
         >
           {{ activity.content }}
         </el-timeline-item>
@@ -70,32 +36,24 @@
   </div>
 </template>
 <script>
+import { reqGetVerList } from "@/api";
 export default {
   data() {
     return {
+      // 列表数据
+      VerList:[],
+      // 右边组件配置
       color: "#0bbd87",
       size: "large",
       icon: "el-icon-more",
-      activities: [
-        {
-          content: "支持使用图标支持使用图标支持使用图标",
-          timestamp: "2018-04-12 20:46",
-        },
-        {
-          content: "支持自定义颜色",
-          timestamp: "2018-04-03 20:46",
-        },
-        {
-          content: "支持自定义尺寸",
-          timestamp: "2018-04-03 20:46",
-        },
-        {
-          content: "默认样式的节点",
-          timestamp: "2018-04-03 20:46",
-        },
-      ],
     };
   },
+  async mounted(){
+    let result = await reqGetVerList()
+    if (result.code == 200) {
+      this.VerList = result.data;
+    }
+  }
 };
 </script>
 <style scoped>
