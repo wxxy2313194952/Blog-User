@@ -1,31 +1,66 @@
-import { reqGetArticle } from "@/api";
+import { reqGetArticleList,reqGetArticleNum,reqGetArticleClass } from "@/api";
+import { Host } from "@/utils/Host";
 //home模块的仓库
 const state = {
-  article:{}
+  artClass: [],
+  articleList: {},
+  articleNum: null
 };
 //mutions是唯一修改state的地方
 const mutations = {
-  GETARTICLE (state, article) {
-    state.article = article
+  GETARTCLASS (state, artClass) {
+    state.artClass = artClass
+  },
+  GETARTICLELIST (state, { articleList, articleClass }) {
+    articleList.forEach(el => {
+      el.cover_img = Host + el.cover_img
+      articleClass.forEach(item => {
+        if (el.classification == item.id)
+          el.classification = item.name
+      })
+    })
+    state.articleList = articleList
+  },
+  GETARTICLENUM (state,articleNum) {
+    state.articleNum = articleNum
   },
 };
-//action|用户处理派发action地方的，可以书写异步语句、自己逻辑地方
 const actions = {
-  async getArticle(context,value) {
-    //需要用await接受成功返回的结果，await必须要结合async一起使用
-    let result = await reqGetArticle(value);
+  // 获取文章分类
+  async getArtClass ({commit}) {
+    let result = await reqGetArticleClass()
     if (result.code == 200) {
-      context.commit("GETARTICLE", result.data);
+      commit('GETARTCLASS', result.data)
+      return result.message
+    }else {
+      return Promise.reject(result.message)
     }
   },
-};
-//计算属性
-const getters = {};
+  // 获取文章列表  分页
+  async getArticleList ({ commit }, params) {
+    let result1 = await reqGetArticleList(params)
+    let result2 = await reqGetArticleClass()
+    if (result1.code == 200 && result2.code == 200) {
+      commit('GETARTICLELIST', {
+        articleList: result1.data,
+        articleClass: result2.data
+      })
+      return result1.message
+    }else {
+      return Promise.reject(result1.message || result2.message)
+    }
+  },
+  async getArticleNum({commit}) {
+    let result = await reqGetArticleNum();
+    if (result.code == 200) {
+      commit("GETARTICLENUM", result.data);
+    }else {
+      return Promise.reject(result.message)
+    }
+  },
+}
 export default {
   state,
   mutations,
-  actions,
-  getters,
-};
-
-
+  actions
+}

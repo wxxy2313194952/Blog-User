@@ -1,9 +1,8 @@
 import axios from 'axios'
-import { getToken } from '@/utils/token'
+import { Host } from '@/utils/Host'
 
 const requests = axios.create({
-  baseURL: "http://127.0.0.1:3080",
-  // baseURL: "http://47.97.40.176:3080",
+  baseURL: Host,
   timeout: 5000,
 })
 
@@ -11,7 +10,6 @@ const requests = axios.create({
 
 
 requests.interceptors.request.use((config) => {
-  config.headers.Authorization = getToken()
   return config
 })
 requests.interceptors.response.use((res) => {

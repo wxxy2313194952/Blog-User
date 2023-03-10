@@ -1,21 +1,18 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+//注册全局组件
 import Left from '@/components/Left'
 import Right from '@/components/Right'
+import Pagination from '@/components/Pagination'
 
 Vue.component(Left.name,Left)
 Vue.component(Right.name,Right)
+Vue.component(Pagination.name,Pagination)
 
-// Element UI
-// import { Select, Form, Input, } from 'element-ui';
-// Vue.use(Select);
-// Vue.use(Form);
-// Vue.use(Input);
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
-Vue.use(ElementUI);
 
+import VueParticles from 'vue-particles'
+Vue.use(VueParticles)
 
 // 引入路由
 import router from '@/router'

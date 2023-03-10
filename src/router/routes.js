@@ -1,27 +1,16 @@
 // 引入路由组件
-import Search from '@/pages/Search'
-import Home from '@/pages/Home'
-import Analytics from '@/pages/Analytics'
-import Article from '@/pages/Article'
-import Archives from '@/pages/Archives'
-import Update from '@/pages/Update'
-import LeaveMessage from '@/pages/LeaveMessage'
-import Daily from '@/pages/Daily'
-import MyArticle from '@/pages/MyArticle'
+const Home = () => import('@/pages/Home')
+const Analytics = () => import('@/pages/Analytics')
+const Article = () => import('@/pages/Article')
+const Archives = () => import('@/pages/Archives')
+const LeaveMessage = () => import('@/pages/LeaveMessage')
+const MyArticle = () => import('@/pages/MyArticle')
 
 export default[
   {
     path: '/home',
     component: Home,
     name: 'home',
-    meta: {
-      isShow: true
-    },
-  },
-  {
-    path: '/daily',
-    component: Daily,
-    name: 'daily',
     meta: {
       isShow: true
     },
@@ -38,14 +27,6 @@ export default[
     path: '/leavemessage',
     component: LeaveMessage,
     name: 'leavemessage',
-    meta: {
-      isShow: true
-    },
-  },
-  {
-    path: '/search/:keywords?',
-    component: Search,
-    name: 'search',
     meta: {
       isShow: true
     },
@@ -75,15 +56,8 @@ export default[
     },
   },
   {
-    path: '/update',
-    component: Update,
-    name: 'update',
-    meta: {
-      isShow: true
-    },
-  },
-  {
     path: '/',
     redirect: '/home'
-  }
+  },
+  
 ]

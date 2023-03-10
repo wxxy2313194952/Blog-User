@@ -1,0 +1,58 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024" height="1024px" width="1024px">
+    <title>头像-男学生4</title>
+    <defs>
+        <circle r="512" cy="512" cx="512" id="path-1"></circle>
+        <rect height="133" width="94" y="0" x="0" id="path-3"></rect>
+        <path id="path-5" d="M347.567605,-5.73763259e-13 C457.803482,42.9842549 538,174.063276 538,329.095567 C538,519.081521 417.564598,673.095567 269,673.095567 C120.435402,673.095567 9.43064043e-15,519.081521 2.10639249e-14,329.095567 C3.05569149e-14,174.063276 80.1965178,42.9842549 190.432395,-5.77315973e-13 L190.433606,0.010785417 C209.979969,14.8222948 237.944984,24.095567 269,24.095567 C299.729123,24.095567 327.432759,15.0159017 346.948258,0.475249013 Z"></path>
+    </defs>
+    <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none" id="头像-男学生4">
+        <rect height="1024" width="1024" y="0" x="0" fill="#FFFFFF"></rect>
+        <g id="编组-3">
+            <mask fill="white" id="mask-2">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use xlink:href="#path-1" fill="#77C4F9" fill-opacity="0.2" id="蒙版"></use>
+            <g mask="url(#mask-2)" id="编组-2">
+                <g id="编组" transform="translate(208.927982, 153.975009)">
+                    <path fill="#489AD2" id="形状结合" d="M303.072018,627.024991 C330.404969,627.024991 356.785783,632.238171 381.639622,641.929424 L381.638412,641.940209 C362.092048,656.751719 334.127034,666.024991 303.072018,666.024991 C272.017239,666.024991 244.052415,656.75186 224.506072,641.940549 L224.505016,641.929189 C249.358679,632.238087 275.739287,627.024991 303.072018,627.024991 Z"></path>
+                    <rect rx="112" height="324" width="580" y="116.024991" x="13.0720177" fill="#110D2E" id="矩形"></rect>
+                    <path fill="#FBB4B4" id="椭圆形备份-4" d="M66.5219796,475.850124 C83.9796604,467.270421 86.6032391,443.317655 72.3819068,422.350124 C58.1605745,401.382594 32.4796604,391.340276 15.0219796,399.91998 C-2.43570115,408.499683 -5.05927994,432.452449 9.16205237,453.41998 C23.3833847,474.38751 49.0642988,484.429828 66.5219796,475.850124 Z"></path>
+                    <path fill="#FBB4B4" id="椭圆形备份-12" d="M539.02198,475.850124 C521.564299,467.270421 518.94072,443.317655 533.162052,422.350124 C547.383385,401.382594 573.064299,391.340276 590.52198,399.91998 C607.97966,408.499683 610.603239,432.452449 596.381907,453.41998 C582.160575,474.38751 556.47966,484.429828 539.02198,475.850124 Z"></path>
+                    <line stroke-linejoin="round" stroke-linecap="round" opacity="0.106926328" stroke-width="7" stroke="#000000" id="路径-6" y2="885.661003" x2="144.572018" y1="799.524991" x1="170.572018"></line>
+                    <line transform="translate(448.572018, 842.362677) scale(-1, 1) translate(-448.572018, -842.362677)" stroke-linejoin="round" stroke-linecap="round" opacity="0.106926328" stroke-width="7" stroke="#000000" id="路径-6备份" y2="885.661003" x2="435.572018" y1="799.524991" x1="461.572018"></line>
+                    <g transform="translate(256.072018, 558.024991)" id="椭圆形备份-11">
+                        <mask fill="white" id="mask-4">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use xlink:href="#path-3" fill="#FFCACA" id="蒙版"></use>
+                        <ellipse ry="47" rx="79" cy="5" cx="47" mask="url(#mask-4)" opacity="0.214906238" style="mix-blend-mode: multiply;" fill="#EC8484"></ellipse>
+                    </g>
+                    <ellipse ry="225" rx="255" cy="370.024991" cx="303.072018" fill="#FFCACA" id="椭圆形"></ellipse>
+                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="#FF9494" id="路径-5备份" d="M293.072018,440.024991 L293.072018,466.024991 C293.072018,473.756977 299.340031,480.024991 307.072018,480.024991 L313.904967,480.024991 L313.904967,480.024991"></path>
+                    <circle r="19" cy="413.024991" cx="206.072018" fill="#110D2E" id="椭圆形"></circle>
+                    <circle r="19" cy="413.024991" cx="400.072018" fill="#110D2E" id="椭圆形备份-7"></circle>
+                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="10" stroke="#EC8484" id="路径-35" d="M260.072018,526.524991 L266.696357,529.386852 C289.575079,539.270966 315.706543,538.21795 337.715776,526.524991 L337.715776,526.524991 L337.715776,526.524991"></path>
+                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="6" stroke="#110D2E" id="路径-4备份" d="M171.072018,365.653731 C185.19021,361.901238 196.679672,360.024991 205.540404,360.024991 C214.401137,360.024991 226.163897,361.901238 240.828686,365.653731"></path>
+                    <path transform="translate(399.950352, 362.839361) scale(-1, 1) translate(-399.950352, -362.839361)" stroke-linejoin="round" stroke-linecap="round" stroke-width="6" stroke="#110D2E" id="路径-4备份-2" d="M365.072018,365.653731 C379.19021,361.901238 390.679672,360.024991 399.540404,360.024991 C408.401137,360.024991 420.163897,361.901238 434.828686,365.653731"></path>
+                    <rect rx="112.5" height="225" width="545" y="69.0249907" x="31.0720177" fill="#110D2E" id="矩形"></rect>
+                    <ellipse ry="69.5" rx="36.5" cy="66.3599272" cx="296.822018" transform="translate(296.822018, 66.359927) rotate(-300.000000) translate(-296.822018, -66.359927)" fill="#110D2E" id="椭圆形"></ellipse>
+                    <ellipse ry="69.5" rx="36.5" cy="69.3599272" cx="361.822018" transform="translate(361.822018, 69.359927) rotate(-300.000000) translate(-361.822018, -69.359927)" fill="#110D2E" id="椭圆形备份"></ellipse>
+                    <ellipse ry="69.5" rx="36.5" cy="66.3599272" cx="475.822018" transform="translate(475.822018, 66.359927) rotate(-300.000000) translate(-475.822018, -66.359927)" fill="#110D2E" id="椭圆形备份-2"></ellipse>
+                    <ellipse ry="69.5" rx="36.5" cy="115.359927" cx="492.822018" transform="translate(492.822018, 115.359927) rotate(-300.000000) translate(-492.822018, -115.359927)" fill="#110D2E" id="椭圆形备份-3"></ellipse>
+                    <g transform="translate(34.072018, 641.929424)" id="矩形-+-矩形备份-2-+-矩形备份-蒙版">
+                        <mask fill="white" id="mask-6">
+                            <use xlink:href="#path-5"></use>
+                        </mask>
+                        <use xlink:href="#path-5" fill="#77C4F9" id="蒙版"></use>
+                        <rect height="182" width="44" y="19.095567" x="110" mask="url(#mask-6)" fill="#1A82C9" id="矩形"></rect>
+                        <rect height="182" width="318" y="130.095567" x="110" mask="url(#mask-6)" fill="#1A82C9" id="矩形备份-2"></rect>
+                        <rect height="182" width="44" y="19.095567" x="384" mask="url(#mask-6)" fill="#1A82C9" id="矩形备份"></rect>
+                    </g>
+                    <circle r="8" cy="695.024991" cx="303.072018" fill="#1A82C9" id="椭圆形"></circle>
+                    <circle r="8" cy="753.024991" cx="303.072018" fill="#1A82C9" id="椭圆形备份-5"></circle>
+                    <circle r="8" cy="724.024991" cx="303.072018" fill="#1A82C9" id="椭圆形备份-6"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -4,21 +4,19 @@ import Vuex from "vuex";
 import Vue from "vue";
 //使用插件
 Vue.use(Vuex);
+import getters from './getters'
 //引入home|search模块的仓库
-import home from "./home";
 import article from "./article";
-import edit from "./edit";
-import daily from "./daily";
-import leave from "./leave";
+import message from "./message";
+import nav from "./nav";
+import echarts from "./echarts";
 
-//需要暴露Vuex.Store类的实例(你需要暴露这个类的实例，如果你不对外暴露，外部是不能使用的)
 export default new Vuex.Store({
-  //模块：把小仓库进行合并变为大仓库
   modules: {
-    home,
     article,
-    edit,
-    daily,
-    leave,
+    message,
+    nav,
+    echarts
   },
+  getters
 });

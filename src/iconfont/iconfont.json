@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "6151396",
+      "name": "angle-right",
+      "font_class": "angle-right",
+      "unicode": "e84e",
+      "unicode_decimal": 59470
+    },
+    {
+      "icon_id": "6151456",
+      "name": "angle-left",
+      "font_class": "angle-left",
+      "unicode": "e84f",
+      "unicode_decimal": 59471
+    },
+    {
+      "icon_id": "8777510",
+      "name": "arrow_left",
+      "font_class": "icon-test",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "8777512",
+      "name": "arrow_right",
+      "font_class": "icon-test1",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
       "icon_id": "573319",
       "name": "奖励-1",
       "font_class": "jiangli1",

@@ -1,7 +1,7 @@
 <template>
   <div class="outer">
     <!-- 左侧 -->
-    <Left></Left>
+    <Left class="le"></Left>
     <!-- 中间 -->
     <div class="center">
       <div class="list-center">
@@ -19,17 +19,22 @@
               <span>{{ article.title }}</span>
             </div>
             <div class="article-content">
-              <p>{{ article.abstract }}</p>
+              <p>{{ article.describe }}</p>
             </div>
             <div class="article-user">
               <span
-                ><i class="iconfont icon-jurassic_user"></i>&nbsp;{{
-                  article.nickname
+                ><i class="iconfont icon-huixingzhen"></i>&nbsp;{{
+                  article.classification
                 }}</span
               >&nbsp;&nbsp;&nbsp;&nbsp;
               <span
                 ><i class="iconfont icon-chakantiezishijian"></i>&nbsp;{{
-                  article.pub_date
+                  article.create_time
+                }}</span
+              >&nbsp;&nbsp;&nbsp;&nbsp;
+              <span
+                ><i class="iconfont icon-liulan1"></i>&nbsp;{{
+                  article.look_count
                 }}</span
               >&nbsp;&nbsp;&nbsp;&nbsp;
               <span
@@ -41,33 +46,22 @@
           </div>
         </router-link>
       </div>
-      <div class="pagination">
-        <el-pagination
-          background
-          layout="prev, pager, next"
-          :total="this.articleNum"
-          :page-size="this.pag.pageSize"
-          :current-page="this.pag.pageNo"
-          prev-click
-          next-click
-          @current-change="handleCurrentChange"
-        >
-        </el-pagination>
-      </div>
+      <Pagination :pageNo="pag.pageNo" :pageSize="pag.pageSize" :total="articleNum" :continues="5" @getPageNo="getPageNo" />
     </div>
     <!-- 右侧 -->
-    <Right></Right>
+    <Right class="ri"></Right>
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import { accessLeave } from '@/api'
 export default {
   data() {
     return {
       pag: {
         // 每页显示的数量pageSize
-        pageSize: 5,
+        pageSize: 7,
         // 当前页码pageNo
         pageNo: 1,
       },
@@ -76,16 +70,25 @@ export default {
   mounted() {
     this.getData();
     this.$store.dispatch("getArticleNum");
+    accessLeave({
+      message: '访问博客文章列表(用户端)',
+      user_behavior: 104,
+      user_menu: 101
+    }).catch(e => {})
+    this.$store.commit("CHANGENAVACT",2)//切换高亮
   },
   computed: {
     ...mapState({
-      articleList: (state) => state.home.articleList,
-      articleNum: (state) => state.home.articleNum,
+      articleList: (state) => state.article.articleList,
+      articleNum: (state) => state.article.articleNum,
     }),
   },
   methods: {
+    getData() {
+      this.$store.dispatch("getArticleList", this.pag);
+    },
     // 当前页改变时的回调
-    handleCurrentChange(val) {
+    getPageNo(val){
       this.pag.pageNo = val;
       this.getData();
       let pag = Math.ceil(this.articleNum / this.pag.pageSize);
@@ -98,17 +101,29 @@ export default {
       } else {
         document.documentElement.scrollTop = 0;
       }
-    },
-    getData() {
-      this.$store.dispatch("getArticleList", this.pag);
-    },
+      accessLeave({
+        message: '访问博客文章列表(用户端)',
+        user_behavior: 100,
+        user_menu: 500
+      }).catch(e => {})
+    }
   },
 };
 </script>
 
 <style scoped>
+.le{
+  height: 100vh;
+  position: sticky;
+  top: 110px;
+}
+.ri{
+  height: 100vh;
+  position: sticky;
+  top: 110px;
+}
 .outer {
-  margin-top: 75px;
+  margin-top: 70px;
   padding-top: 15px;
   width: 100%;
   background-color: rgb(241, 243, 244);
@@ -122,11 +137,13 @@ export default {
   margin: 20px;
   /* background-color: #fff; */
   flex-shrink: 0;
+  position: relative;
+  z-index: 99;
 }
 /* 文章列表 */
 .list-center .article {
   width: 100%;
-  height: 200px;
+  height: 150px;
   margin-bottom: 20px;
   background-color: #fff;
   border-radius: 7px;
@@ -140,37 +157,40 @@ export default {
   margin: auto 18px;
 }
 .article .article-left img {
-  height: 160px;
-  width: 290px;
+  height: 120px;
+  width: 200px;
   border-radius: 5px;
 }
 .article-right {
   margin-left: 15px;
-  width: 505px;
+  width: 600px;
 }
 .article-right .article-title {
   font-size: 25px;
-  margin-top: 25px;
+  margin-top: 15px;
   color: rgb(66, 139, 202);
 }
 .article-right .article-content {
-  font-size: 14px;
-  margin-top: 14px;
+  font-size: .9rem;
+  margin-top: 8px;
   line-height: 30px;
   padding-right: 20px;
-  height: 75px;
+  height: 50px;
   color: #a0a0a0;
 }
 .article-right .article-user {
   font-size: 14px;
-  padding-top: 14px;
+  padding-top: 10px;
   border-top: 1px solid rgb(200, 200, 200);
   margin-right: 30px;
   color: rgb(66, 139, 202);
 }
+.article-right .article-user .iconfont{
+  font-size: .9rem;
+}
 
-.pagination {
+/* .pagination {
   margin: 20px;
   text-align: center;
-}
+} */
 </style>

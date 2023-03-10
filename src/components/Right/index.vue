@@ -132,7 +132,6 @@ export default {
     };
   },
   async mounted() {
-    //需要用await接受成功返回的结果，await必须要结合async一起使用
     let result = await reqGetRrghtInfo();
     if (result.code == 200) {
       this.info = result.data;
@@ -152,7 +151,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding-top: 15px; */
+  position: relative;
+  z-index: 99;
 }
 /* 点赞信息 */
 .like {

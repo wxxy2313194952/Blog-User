@@ -36,17 +36,17 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+// import { mapState } from 'vuex';
 export default {
-  mounted() {
-    this.$store.dispatch('getArticleList')
-    // console.log(this.$store.state.home);
-  },
-  computed:{
-    ...mapState({
-      articleList: (state) => state.home.articleList,
-    }),
-  }
+  // mounted() {
+  //   this.$store.dispatch('getArticleList')
+  //   // console.log(this.$store.state.home);
+  // },
+  // computed:{
+  //   ...mapState({
+  //     articleList: (state) => state.home.articleList,
+  //   }),
+  // }
 
 }
 </script>
