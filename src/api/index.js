@@ -101,7 +101,7 @@ export const reqGetTimeList = () => requests({
 // 获取前七天访问量 折线图
 export const reqGetLineCharts = () => requests({
   url: '/api/echarts/getlinecharts',
-  method: 'get'
+  method: 'get'//params: {day}
 })
 
 // 获取前七天日期

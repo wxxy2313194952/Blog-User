@@ -393,7 +393,7 @@ export default {
 }
 /* 流量统计 折线图 */
 .cardline {
-  height: 400px;
+  height: 430px;
   width: 100%;
   background-color: #fff;
   margin-bottom: 30px;
