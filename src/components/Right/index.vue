@@ -21,50 +21,18 @@
         <div class="like-title"><span>热门文章</span></div>
         <!-- 展示区 -->
         <ul class="like-cont">
-          <li class="like-cont-item">
-            <div class="cont-item-img"><a href="javascript:;"><img src="./images/pic.png" /></a></div>
+          <li class="like-cont-item" v-for="(art,index) in artList" :key="art.id">
+            <div class= "cont-item-img"><a href="javascript:;" @click="gotoArt(art.id)"><img :src="host+`/uploads/rightImg/`+index+`.png`" /></a></div>
             <div class="cont-item-p">
               <div class="pa">
-                <a href="javascript:;"><span>测试标题</span></a>
+                <a href="javascript:;" @click="gotoArt(art.id)"><span>{{art.title}}</span></a>
               </div>
               <div class="pb">
-                <i class="iconfont icon-liulan1"></i><span>&nbsp;1234</span>
+                <i class="iconfont icon-liulan1"></i><span>&nbsp;{{art.look_count}}</span>
               </div>
             </div>
           </li>
-          <li class="like-cont-item">
-            <div class="cont-item-img"><a href="javascript:;"><img src="./images/pic.png" /></a></div>
-            <div class="cont-item-p">
-              <div class="pa">
-                <a href="javascript:;"><span>测试标题</span></a>
-              </div>
-              <div class="pb">
-                <i class="iconfont icon-liulan1"></i><span>&nbsp;1234</span>
-              </div>
-            </div>
-          </li>
-          <li class="like-cont-item">
-            <div class="cont-item-img"><a href="javascript:;"><img src="./images/pic.png" /></a></div>
-            <div class="cont-item-p">
-              <div class="pa">
-                <a href="javascript:;"><span>测试标题</span></a>
-              </div>
-              <div class="pb">
-                <i class="iconfont icon-liulan1"></i><span>&nbsp;1234</span>
-              </div>
-            </div>
-          </li>
-          <li class="like-cont-item">
-            <div class="cont-item-img"><a href=""><img src="./images/pic.png" /></a></div>
-            <div class="cont-item-p">
-              <div class="pa">
-                <a href=""><span>测试标题</span></a>
-              </div>
-              <div class="pb">
-                <i class="iconfont icon-liulan1"></i><span>&nbsp;1234</span>
-              </div>
-            </div>
-          </li>
+
         </ul>
       </div>
     </div>
@@ -123,20 +91,33 @@
 </template>
 
 <script>
-import { reqGetRrghtInfo } from "@/api/index";
+import { mapState } from "vuex";
+import { Host } from "@/utils/Host";
 export default {
   name: "Right",
   data() {
     return {
-      info: {},
-    };
-  },
-  async mounted() {
-    let result = await reqGetRrghtInfo();
-    if (result.code == 200) {
-      this.info = result.data;
+      host: Host
     }
   },
+  mounted() {
+    this.$store.dispatch("getRightInfo")
+    this.$store.dispatch("getHotArticle")
+  },
+  computed:{
+    ...mapState({
+      info: state => state.right.info,
+      artList: state => state.right.artList,
+    })
+  },
+  methods:{
+    gotoArt(id){
+      this.$router.replace({
+        name:'article',
+          params:{id}
+      })
+    }
+  }
 };
 </script>
 

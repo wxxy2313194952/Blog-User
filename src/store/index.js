@@ -10,13 +10,17 @@ import article from "./article";
 import message from "./message";
 import nav from "./nav";
 import echarts from "./echarts";
+import right from "./right";
+import home from "./home";
 
 export default new Vuex.Store({
   modules: {
     article,
     message,
     nav,
-    echarts
+    echarts,
+    right,
+    home
   },
   getters
 });

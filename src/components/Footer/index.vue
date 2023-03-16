@@ -4,9 +4,9 @@
     <div class="top">
       <div class="top-list">lime space © 2022</div>
       <div class="top-list font-color">TUTU BLOG</div>
-      <div class="top-list"><span>|</span></div>
+      <!-- <div class="top-list"><span>|</span></div>
       <div class="top-img"><img src="./images/beian.png"></div>
-      <div class="top-a"><a href="javascript:;">沪公网安备31011006532436号</a></div>
+      <div class="top-a"><a href="javascript:;">沪公网安备31011006532436号</a></div> -->
     </div>
     <!-- 下 -->
     <div class="bottom">

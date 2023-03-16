@@ -37,7 +37,7 @@
           <div class="charts" ref="charts"></div>
         </div>
       </div>
-      <!-- 用户轨迹 -->
+      <!-- 用户轨迹 饼图 -->
       <div class="infolist">
         <div class="title-part-pie">
           <span class="title-word">数据占比</span>
@@ -104,7 +104,7 @@ export default {
       myChart: null,
       pieCharts1: null,
       pieCharts2: null,
-      // 展示数据的天数 1:七天 2:十四天 3:三十天
+      // 展示数据的天数 七天 十四天 三十天
       pieShowDay: 7,
       lineShowDay: 7
     };
@@ -124,7 +124,9 @@ export default {
     getLineShowDay(day) {
       this.lineShowDay = day;
       // 重新请求展示数据
-      
+      this.$store.dispatch("getLineCharts", this.lineShowDay);
+      this.$store.dispatch("getLineChartsIP", this.lineShowDay);
+      this.$store.dispatch("getLastweek", this.lineShowDay);
       accessLeave({
         message: '切换折线图(用户端)',
         user_behavior: 106,
@@ -134,8 +136,9 @@ export default {
   },
   mounted() {
     this.$store.commit("CHANGENAVACT", 5); //切换高亮
-    this.$store.dispatch("getLineCharts");
-    this.$store.dispatch("getLastweek");
+    this.$store.dispatch("getLineCharts", this.lineShowDay);
+    this.$store.dispatch("getLineChartsIP", this.lineShowDay);
+    this.$store.dispatch("getLastweek", this.lineShowDay);
     this.$store.dispatch("getPieBehavior",this.pieShowDay);
     this.$store.dispatch("getPieMenu",this.pieShowDay);
     this.$store.dispatch("getUserData");
@@ -305,6 +308,7 @@ export default {
   computed: {
     ...mapState({
       lineCharts: state => state.echarts.lineCharts,
+      lineChartsIP: state => state.echarts.lineChartsIP,
       lastWeek: state => state.echarts.lastWeek,
       pieBehavior: state => state.echarts.pieBehavior,
       pieMenu: state => state.echarts.pieMenu,
@@ -319,7 +323,19 @@ export default {
             data: this.lineCharts,
           },
           {
-            data: [12,34,23,4,13,38,25],
+            data: this.lineChartsIP,
+          },
+        ],
+      });
+    },
+    lineChartsIP() {
+      this.myChart.setOption({
+        series: [
+          {
+            data: this.lineCharts,
+          },
+          {
+            data: this.lineChartsIP,
           },
         ],
       });

@@ -59,12 +59,17 @@ export const reqLeaveReview = data => requests({
   data
 });
 
-// 右侧博客信息接口
-export const reqGetRrghtInfo = () => requests({
-  url: '/api/right/getinfo',
+// 右侧热门文章接口
+export const reqGetHotArticle = () => requests({
+  url: '/api/right/gethotarticle',
   method: 'get'
 })
 
+// 右侧博客信息接口
+export const reqGetRightInfo = () => requests({
+  url: '/api/right/getinfo',
+  method: 'get'
+})
 
 // 获取全局组件Left标签云列表接口
 export const reqGetLableList = () => requests({
@@ -99,15 +104,24 @@ export const reqGetTimeList = () => requests({
 })
 
 // 获取前七天访问量 折线图
-export const reqGetLineCharts = () => requests({
+export const reqGetLineCharts = day => requests({
   url: '/api/echarts/getlinecharts',
-  method: 'get'//params: {day}
+  method: 'get',
+  params: { day }
 })
 
-// 获取前七天日期
-export const reqGetLastweek = () => requests({
+// 获取前七天访问量 折线图IP
+export const reqGetLineChartsIP = day => requests({
+  url: '/api/echarts/getlinechartsip',
+  method: 'get',
+  params: { day }
+})
+
+// 获取前n天日期
+export const reqGetLastweek = day => requests({
   url: '/api/echarts/getlastweek',
-  method: 'get'
+  method: 'get',
+  params: { day }
 })
 
 // 饼图统计 用户行为
@@ -127,6 +141,18 @@ export const reqGetPieMenu = day => requests({
 // 总数据统计
 export const reqGetUserData = () => requests({
   url: '/api/echarts/getuserdata',
+  method: 'get'
+})
+
+// 首页
+export const reqGetArtMain = () => requests({
+  url: '/api/home/getartmain',
+  method: 'get'
+})
+
+// 首页
+export const reqGetArtOther = () => requests({
+  url: '/api/home/getartother',
   method: 'get'
 })
 

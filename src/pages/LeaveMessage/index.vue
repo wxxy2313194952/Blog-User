@@ -39,7 +39,7 @@
                   v-model="email"
                 />
               </div>
-              <button class="btn" @click="submit">评论</button>
+              <button class="btn" @click="submit">留言</button>
             </div>
           </div>
         </div>

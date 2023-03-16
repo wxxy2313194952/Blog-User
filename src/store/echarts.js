@@ -1,7 +1,8 @@
-import { reqGetLineCharts, reqGetLastweek, reqGetPieBehavior, reqGetPieMenu, reqGetUserData } from '@/api'
+import { reqGetLineCharts, reqGetLineChartsIP, reqGetLastweek, reqGetPieBehavior, reqGetPieMenu, reqGetUserData } from '@/api'
 
 const state = {
   lineCharts: [],
+  lineChartsIP: [],
   lastWeek: [],
   pieBehavior: [],
   pieMenu: [],
@@ -11,6 +12,9 @@ const state = {
 const mutations = {
   GETLINECHARTS (state, lineCharts) {
     state.lineCharts = lineCharts
+  },
+  GETLINECHARTSIP (state, lineChartsIP) {
+    state.lineChartsIP = lineChartsIP
   },
   GETLASTWEEK (state, lastWeek) {
     state.lastWeek = lastWeek
@@ -27,8 +31,8 @@ const mutations = {
 }
 
 const actions = {
-  async getLineCharts ({ commit }) {
-    let result = await reqGetLineCharts()
+  async getLineCharts ({ commit }, day) {
+    let result = await reqGetLineCharts(day)
     if (result.code == 200) {
       commit('GETLINECHARTS',result.data)
       return result.message
@@ -36,8 +40,17 @@ const actions = {
       return Promise.reject(result.message)
     }
   },
-  async getLastweek ({ commit }) {
-    let result = await reqGetLastweek()
+  async getLineChartsIP ({ commit }, day) {
+    let result = await reqGetLineChartsIP(day)
+    if (result.code == 200) {
+      commit('GETLINECHARTSIP',result.data)
+      return result.message
+    }else {
+      return Promise.reject(result.message)
+    }
+  },
+  async getLastweek ({ commit }, day) {
+    let result = await reqGetLastweek(day)
     if (result.code == 200) {
       commit('GETLASTWEEK',result.data)
       return result.message
